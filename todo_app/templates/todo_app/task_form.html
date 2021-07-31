@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+{% extends 'todo_app/main.html' %}
+{% block content%}
+<div class="header-bar" style="display:block;">
+    <div style="">
+    <a  href="{% url 'tasks' %}">&#8592; Back</a>
+    </div>
+    <form method="POST" style="font-size:20px;"action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type = "submit" value="submit">
+
+    </form>
+
+</div>
+{% endblock content %}
+</body>
+</html>

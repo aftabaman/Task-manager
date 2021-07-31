@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+{% extends 'todo_app/main.html' %}
+{% block content%}
+<div class="header-bar" style="display:block;">
+    <div style="">
+    <a  href="{% url 'tasks' %}">&#8592; Back</a>
+    </div>
+
+<form method="POST">
+    {% csrf_token%}
+    <p style ="font-size:30px;"> Are you sure? </p>
+    <input  class=" button" type="submit" value="delete">
+</form>
+</div>
+{% endblock content %}
+</body>
+</html>
